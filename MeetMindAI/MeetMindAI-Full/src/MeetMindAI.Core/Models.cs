@@ -1,0 +1,10 @@
+namespace MeetMindAI.Core.Models;
+public record User(Guid Id,string Name,string Email);
+public record Meeting(Guid Id,string Title,DateTime StartedAt,DateTime? EndedAt,string Status);
+public record Transcript(Guid Id,Guid MeetingId,string Speaker,string Text,DateTimeOffset Timestamp);
+public record AssistantSuggestion(Guid Id,Guid MeetingId,string Question,string Answer,string Confidence);
+public record MeetingSummary(Guid Id,Guid MeetingId,string Summary,string Decisions,string ActionItems);
+public record LoginRequest(string Email,string Password);
+public record LoginResponse(string Token,User User);
+public record CreateMeetingRequest(string Title);
+public record AskRequest(string Question);
